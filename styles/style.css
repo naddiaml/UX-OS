@@ -1,0 +1,541 @@
+/* Estilos Universales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    width: 100%;
+    height: 4rem;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.11);
+}
+
+.logo {
+    font-weight: 700;
+    color: #6BA7C9;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header__nav li {
+    display: inline-block;
+}
+
+.header__nav li:not(:first-child) {
+    margin-left: 1.5rem;
+}
+
+.header__nav li a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.button {
+    width: 120px;
+    height: 40px;
+    background-color: #6BA7C9;
+    border: none;
+    border-radius: 2rem;
+    margin-top: -0.5rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Main Section */
+
+.main-section-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+    /* ↓ Estilos aplicables a c/primera sección de c/página ↓ */
+
+    section:first-of-type {
+        margin-top: 12vh;
+    }
+
+.main-section__text {
+    width: 30rem;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #6BA7C9;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 400;
+    color: #294D61;
+}
+
+p {
+    margin: 1rem 0;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.main-section__button {
+    width: 120px;
+    height: 40px;
+    background-color: #6BA7C9;
+    border: none;
+    border-radius: 0 2rem 2rem 2rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.main-section__img {
+    width: 35rem;
+}
+
+/* Sección de Servicios (Services Section) */
+
+h3, .section-name {
+    font-size: 20px;
+    font-weight: 600;
+    width: fit-content;
+    margin: auto;
+}
+
+.services-section__text-container, .contact-section__text-container, .text-container {
+    width: 600px;
+    text-align: center;
+    margin: auto;
+}
+
+.services-section__items-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.services-section__items-container ul {
+    list-style-image: url('../assets/Bullet\ Points.svg');
+    list-style-position: inside;
+}
+
+.cta-container {
+    width: fit-content;
+    margin: 2rem auto;
+}
+
+.cta {
+    width: 220px;
+    height: 60px;
+    font-size: 1em;
+    font-weight: 700;
+    color: #fff;
+    background-color: #6BA7C9;
+    border: none;
+    border-radius: 20rem;
+    cursor: pointer;
+}
+
+section {
+    margin-bottom: 10vh;
+}
+
+/* About Section */
+.about-section {
+    background-color: #C6E8F9;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-section__items-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.data
+
+.data__number {
+    font-weight: 700;
+    font-size: 40px;
+    color: #6BA7C9;
+}
+
+.data__concept {
+    font-weight: 400;
+    font-size: 20px;
+    color: #6BA7C9;
+}
+
+.items-container-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/**/
+
+/* SecciÃ³n de trabajos realizados */
+
+.social-container {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 1rem auto;
+}
+
+.social__profile:not(:first-of-type) {
+    margin-left: 2rem;
+}
+
+.profile__logo {
+    width: 1rem;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.profile__hyperlink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    color: #6BA7C9;
+}
+
+.projects-container {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 1rem auto;
+}
+
+.project {
+    width: 9rem;
+}
+
+.project__preview-image {
+    width: 9rem;
+}
+
+.project__name {
+    margin: 0;
+    font-size: 13px;  
+    font-weight: 700;
+    font-size: 16px;
+    color: #6BA7C9;
+    cursor: pointer;
+}
+
+.project__provided-services {
+    margin: 0;
+    font-size: 13px;  
+}
+
+.project__hyperlink {
+    display: none;
+}
+
+/* Testimonial Section */
+
+.testimonial-cards__container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1rem auto;
+}
+
+.testimonial-card {
+    width: 300px;
+    height: 350px;
+    background-color: #EDEDED;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.client-data img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.client-data span {
+    margin-left: 1rem;
+    position: absolute;
+}
+
+.client-data span:not(:first-of-type) {
+    color: rgba(0, 0, 0, 0.3);
+    margin-top: 1.5rem;
+}
+
+.quote-decoration {
+    margin-top: 1rem;
+    margin-left: 5.5rem;
+}
+
+/* Contact Section */
+
+form {
+    width: fit-content;
+    margin: auto;
+}
+
+fieldset {
+    border: 0;
+}
+
+.field {
+    width: fit-content;
+    display: inline-block;
+    margin: 2rem 0;
+}
+
+.field:not(:first-of-type) {
+    margin-left: 3rem;
+}
+
+form label {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.required {
+    color: #cf3950;
+}
+
+form input, #message {
+    font-size: 14px;
+    outline: none;
+    border:none;
+    border-bottom: 1px solid #EDEDED;
+    width: 300px;
+    padding: .2rem 0;
+    margin: .5rem 0 0 0;
+    display: block;
+}
+
+#message {
+    min-width: 100%;
+    min-height: 200px;
+    padding: 2rem;
+    background-color: #EDEDED;
+    border-radius: 0 3rem 3rem 3rem;
+}
+
+#message::placeholder {
+    position: absolute;
+}
+
+/* Footer */
+
+footer {
+    padding: 2rem 0;
+    background-color: #C6E8F9;
+    width: 100%;
+}
+
+.footer-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-social-container img {
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+.category ul {
+    list-style: none;
+}
+
+.category-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #6BA7C9;
+    text-decoration: underline;
+}
+
+.category ul li {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.category ul li a, .link-info {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.contact {
+    font-weight: 600;
+    color: #6BA7C9;
+}
+
+.arrow {
+    width: 25px;
+    position: absolute;
+    margin-left: 1rem;
+}
+
+/* Estilos aplicables a otras páginas */
+
+    /* Services Page */
+
+    .cards-container {
+        width: fit-content;
+        margin: 2rem auto 0;
+    }
+
+    .service-card {
+        width: 900px;
+        height: 250px;
+        padding: 2.5rem;
+        box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.11);
+        border-radius: 40px;
+        margin-bottom: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .service-card .right-container, .service-card .left-container{
+        width: 350px;
+    }
+
+    .service-card .left-container{
+        margin-left: 8rem;
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .service-name {
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size: 20px;
+        color: #6BA7C9;
+    }
+
+    .tecnologies-container img {
+        width: 30px;
+    }
+
+    .tecnologies-container img:not(:first-child) {
+        margin-left: 1rem;
+    }
+
+    /* Portfolio Page */
+
+    .gallery-container {
+        width: 60%;
+        margin: 1rem auto;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, .5fr);
+        grid-gap: 1rem;
+    }
+
+    .project-preview {
+        background-color: #EDEDED;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2.5rem;
+    }
+
+    .first-project {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .first-project img {
+        transform: rotate(90deg);
+    }
+
+    .second-project {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 3;
+    }
+
+    .third-project {
+        grid-row-start: 2;
+        grid-column-start: 1;
+    }
+
+    .fourth-project {
+        grid-row-start: 2;
+        grid-column-start: 2;
+    }
+
+    /* About Page */
+    .statements__container {
+        width: fit-content;
+        margin: 3rem auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .statements__container div {
+        width: 250px;
+    }
+    
+    .statements__container div:last-of-type {
+        margin-left: 5rem;
+    }
+    
+    .statement img {
+        margin-left: 5rem;
+    }
+    
+    .info__container {
+        width: 60%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .category-name.info {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .info__category:not(:first-child) {
+        margin-left: 2rem;
+    }
+
+    .info__category:not(:last-child) {
+        border-right: 2px solid #EDEDED;
+        padding-right: 2.5rem;
+    }
+
+    /* Contact Page*/
+
