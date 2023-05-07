@@ -1,0 +1,8 @@
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */
+
+@mixin flexbox($align, $justify, $direction) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}

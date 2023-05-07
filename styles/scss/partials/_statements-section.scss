@@ -1,0 +1,27 @@
+/* Statement Section · About Page */
+@use '../base/_mixinsfunc.scss';
+@import '../base/_variables.scss';
+
+.statements__container {
+    width: fit-content;
+    margin: 3rem auto;
+    @include mixinsfunc.flexbox(center, space-evenly, initial);
+
+    & div {
+        width: 22%;
+    }
+
+    .statement {
+        @include mixinsfunc.flexbox(center, initial, column);
+
+        i {
+            font-size: 1.5rem;
+            color: $primary-color;
+        }
+
+        p {
+            font-size: 13px;
+            text-align: center;
+        }
+    }
+}

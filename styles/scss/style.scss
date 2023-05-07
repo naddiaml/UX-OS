@@ -1,0 +1,28 @@
+/* Partials */
+
+    /* Media Queries */
+    @import 'base/_media.scss';
+
+    /* Archivo específico para variables */
+    @import 'base/_variables.scss';
+
+    /* Archivo específico para mixins */
+    @import 'base/_mixinsfunc.scss';
+
+    /* Archivo Reset con estilos universales */
+    @import 'partials/_reset.scss';
+
+    @import 'partials/_header.scss';
+    @import 'partials/_hero.scss';
+    @import 'partials/_services-section.scss';
+    @import 'partials/_data-section.scss';
+    @import 'partials/_projects-section.scss';
+    @import 'partials/_testimonial-section.scss';
+    @import 'partials/contact-section';
+    @import 'partials/_footer.scss';
+
+    /* Secciones de otras páginas */
+    @import 'partials/_services-cards.scss';
+    @import 'partials/_projects-gallery.scss';
+    @import 'partials/_statements-section.scss';
+    @import 'partials/_info-about.scss'

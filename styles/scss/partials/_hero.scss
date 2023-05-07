@@ -1,0 +1,71 @@
+/* Hero / Main Section (Index)*/
+@use '../base/_mixinsfunc.scss';
+@import '../base/_variables.scss';
+
+.main-section__container {
+    width: 90%;
+    margin: auto;
+
+    .main-section__text {
+        width: 30rem;
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            color: $primary-color;
+        }
+
+        h2 {
+            font-size: 25px;
+            font-weight: 400;
+            color: #294D61;
+        }
+
+        p {
+            margin: 1rem 0;
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .main-section__button {
+        width: 120px;
+        height: 40px;
+        background-color: $primary-color;
+        border-radius: 0 2rem 2rem 2rem;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .main-section__img {
+        width: 50%;
+    }
+
+
+    @include breakpoint {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 15vh;
+
+        .main-section__text {
+            width: 45vw;
+
+            h1 {
+                font-size: 25px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+
+        .main-section__img {
+            display: none;
+        }
+
+        .main-section__button {
+            border-radius: 5px;
+        }
+    }
+}

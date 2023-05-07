@@ -1,0 +1,75 @@
+@import '../base/_variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.current {
+    font-weight: 600;
+}
+
+/* ↓ Estilos aplicables a c/primera sección de c/página
+        (Que debido al position-fixed aplicado en el header, el flujo inicial del contenido se modifica) ↓ */
+        section:first-of-type {
+            margin-top: 15vh;
+        }
+
+        section {
+            margin-bottom: 10vh;
+        }
+
+        h3, .section-name {
+            font-size: 20px;
+            font-weight: 600;
+            width: fit-content;
+            margin: auto;
+        } 
+        
+        .section__text-container {
+            width: 600px;
+            text-align: center;
+            margin: auto;
+        
+            @include breakpoint {
+                width: 60vw;
+
+                & p {
+                    font-size: 13px;
+                }
+            }
+        }        
+
+        p {
+            margin: 1rem 0;
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button.cta[type="submit"] {
+            padding: 1rem 2rem;
+        }
+
+        .cta-container {
+            width: fit-content;
+            margin: 2rem auto;
+        }
+        
+        .cta {
+            padding: 1rem;
+            font-size: 1em;
+            font-weight: 700;
+            color: #fff;
+            background-color: $primary-color;
+            border: none;
+            border-radius: 20rem;
+            cursor: pointer;
+        }
+
+        

@@ -1,0 +1,36 @@
+/* Sección de datos/about Index */
+@use '../base/_mixinsfunc.scss';
+@import '../base/_variables.scss';
+
+.about-section {
+    background-color: #C6E8F9;
+    height: 25rem;
+
+
+    .data {
+        @include mixinsfunc.flexbox(center, initial, column);
+
+        &__number {
+            font-weight: 700;
+            font-size: 40px;
+            color: $primary-color;
+        }
+
+        &__concept {
+            font-weight: 400;
+            font-size: 20px;
+            color: $primary-color;
+        }
+    }
+
+    @include breakpoint {
+        .about-section__items-container {
+            flex-direction: column;
+
+            .data:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+}

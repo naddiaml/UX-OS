@@ -1,0 +1,95 @@
+/* Footer */
+@use '../base/_mixinsfunc.scss';
+@import '../base/_variables.scss';
+
+footer {
+    padding: 2rem 0;
+    background-color: $secondary-color;
+
+    .footer-container {
+        width: 90%;
+    }
+
+
+    .logo {
+        font-weight: 700;
+        color: $primary-color;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+
+    .footer-social-container {
+        @include mixinsfunc.flexbox(center, space-between, row);
+
+
+        a {
+            color: $primary-color;
+
+            i {
+                font-size: 1.5rem;
+            }
+
+            &:not(:first-child) {
+                margin-left: .5rem;
+            }
+        }
+
+    }
+
+    .category {
+
+        &-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: $primary-color;
+            text-decoration: underline;
+        }
+
+        & ul {
+            list-style: none;
+
+            & li {
+                font-size: 14px;
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.5);
+                cursor: pointer;
+
+                & a {
+                    text-decoration: none;
+                    color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+
+        .contact {
+            font-weight: 600;
+            color: $primary-color;
+        }
+
+        .arrow {
+            width: 25px;
+            position: absolute;
+            margin-left: 1rem;
+        }
+
+    }
+
+    @include breakpoint {
+        .footer-container {
+            flex-direction: column;
+
+            .footer-social-container {
+                width: 25%;
+            }
+
+            & div:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+}

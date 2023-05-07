@@ -1,0 +1,28 @@
+/* Services Section · Index */
+@use '../base/_mixinsfunc.scss';
+@import '../base/_variables.scss';
+
+.services-section__items-container {
+    justify-content: space-evenly;
+
+    ul {
+        list-style-image: url('../../../assets/Bullet-Points.svg');
+        list-style-position: inside;
+
+        .bold-text {
+            font-weight: 700;
+            color: $primary-color;
+        }
+    }
+
+
+    @include breakpoint {
+        font-size: 12px;
+        @include mixinsfunc.flexbox(center, space-evenly, column);
+
+        img {
+            width: 60%;
+        }
+    }
+
+}

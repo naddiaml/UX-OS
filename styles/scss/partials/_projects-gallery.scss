@@ -1,0 +1,65 @@
+/* Projects - Gallery */
+@use '../base/_mixinsfunc.scss';
+@import '../base/_variables.scss';
+
+.gallery-container {
+    width: 60%;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, .5fr);
+    grid-gap: 1rem;
+
+    .project-preview {
+        background-color: #EDEDED;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2.5rem;
+    }
+
+    .first-project {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        img {
+            transform: rotate(90deg);
+        }
+
+    }
+
+    .second-project {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 3;
+    }
+
+    .third-project {
+        grid-row-start: 2;
+        grid-column-start: 1;
+    }
+
+    .fourth-project {
+        grid-row-start: 2;
+        grid-column-start: 2;
+    }
+
+    @include breakpoint {
+
+        .project-preview {
+            padding: .5rem;
+
+            img {
+                width: 60%;
+            }
+        }
+
+        .first-project {
+            img {
+                width: 30%;
+            }
+        }
+
+    }
+
+}

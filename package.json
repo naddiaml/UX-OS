@@ -1,0 +1,15 @@
+{
+  "name": "preentrega2-mlinarevic",
+  "version": "1.0.0",
+  "description": "Hi! I'm Nadia :woman_technologist:, a **constant learner of Web Development**.\r In this part of my learning journey, I had to face a new challenge: creating a website using the main Front-End Development technologies.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.62.1"
+  }
+}

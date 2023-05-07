@@ -1,0 +1,752 @@
+@charset "UTF-8";
+/* Partials */
+/* Media Queries */
+/* Archivo específico para variables */
+/* Archivo específico para mixins */
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */
+/* Archivo Reset con estilos universales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.current {
+  font-weight: 600;
+}
+
+/* ↓ Estilos aplicables a c/primera sección de c/página
+        (Que debido al position-fixed aplicado en el header, el flujo inicial del contenido se modifica) ↓ */
+section:first-of-type {
+  margin-top: 15vh;
+}
+
+section {
+  margin-bottom: 10vh;
+}
+
+h3, .section-name {
+  font-size: 20px;
+  font-weight: 600;
+  width: fit-content;
+  margin: auto;
+}
+
+.section__text-container {
+  width: 600px;
+  text-align: center;
+  margin: auto;
+}
+@media screen and (max-width: 960px) {
+  .section__text-container {
+    width: 60vw;
+  }
+  .section__text-container p {
+    font-size: 13px;
+  }
+}
+
+p {
+  margin: 1rem 0;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.cta[type=submit] {
+  padding: 1rem 2rem;
+}
+
+.cta-container {
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.cta {
+  padding: 1rem;
+  font-size: 1em;
+  font-weight: 700;
+  color: #fff;
+  background-color: #6BA7C9;
+  border: none;
+  border-radius: 20rem;
+  cursor: pointer;
+}
+
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Header */
+header {
+  /* Bootstrap styles - Menú hamburguesa */
+  height: 4rem;
+  padding: 0 4rem;
+  background-color: #ffffff;
+  z-index: 1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.11);
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: initial;
+  /* ↓ Para mostrar los elementos del nav en tamaño desktop */
+}
+header .logo {
+  font-weight: 700;
+  color: #6BA7C9;
+  float: left;
+  cursor: pointer;
+}
+header .collapse:not(.show) {
+  display: initial;
+}
+header .collapse,
+header .navbar-collapse {
+  display: initial;
+}
+header .header__nav {
+  /* Uso de mixin para reducir código al momento de incorporar flexbox.
+      Orden de los parámetros: $align, $justify, $direction */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: fit-content;
+  margin-left: auto;
+  margin-bottom: 0;
+}
+header .header__nav li {
+  list-style: none;
+}
+header .header__nav li a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+}
+header .header__nav li:not(:first-child) {
+  margin-left: 1.5rem;
+}
+header .button {
+  width: 120px;
+  height: 40px;
+  background-color: #6BA7C9;
+  border-radius: 2rem;
+  margin-top: -0.5rem;
+  font-size: 13px;
+  font-weight: 600;
+}
+@media screen and (max-width: 960px) {
+  header {
+    background-color: #ffffff;
+    height: fit-content;
+    padding: 0.8rem;
+    position: fixed;
+    display: initial;
+  }
+  header .collapse:not(.show) {
+    display: none;
+  }
+  header .navbar-toggler {
+    float: right;
+  }
+  header .animated-icon1 {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    right: 0;
+    margin: 0px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  header .animated-icon1 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+  header .animated-icon1 span:nth-child(1) {
+    top: 0px;
+  }
+  header .animated-icon1 span:nth-child(2) {
+    top: 10px;
+  }
+  header .animated-icon1 span:nth-child(3) {
+    top: 20px;
+  }
+  header .animated-icon1.open span:nth-child(1) {
+    top: 11px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  header .animated-icon1.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+  header .animated-icon1.open span:nth-child(3) {
+    top: 11px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  header .header__nav {
+    width: fit-content;
+    height: 100vh;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: initial;
+    flex-direction: column;
+  }
+  header .header__nav li {
+    margin-top: 2rem;
+  }
+  header .header__nav li:first-child {
+    margin-top: 1.16rem;
+  }
+  header .header__nav li:not(:first-child) {
+    margin-left: 0;
+  }
+}
+
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Hero / Main Section (Index)*/
+.main-section__container {
+  width: 90%;
+  margin: auto;
+}
+.main-section__container .main-section__text {
+  width: 30rem;
+}
+.main-section__container .main-section__text h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #6BA7C9;
+}
+.main-section__container .main-section__text h2 {
+  font-size: 25px;
+  font-weight: 400;
+  color: #294D61;
+}
+.main-section__container .main-section__text p {
+  margin: 1rem 0;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.main-section__container .main-section__button {
+  width: 120px;
+  height: 40px;
+  background-color: #6BA7C9;
+  border-radius: 0 2rem 2rem 2rem;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.main-section__container .main-section__img {
+  width: 50%;
+}
+@media screen and (max-width: 960px) {
+  .main-section__container {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15vh;
+  }
+  .main-section__container .main-section__text {
+    width: 45vw;
+  }
+  .main-section__container .main-section__text h1 {
+    font-size: 25px;
+  }
+  .main-section__container .main-section__text h2 {
+    font-size: 18px;
+  }
+  .main-section__container .main-section__img {
+    display: none;
+  }
+  .main-section__container .main-section__button {
+    border-radius: 5px;
+  }
+}
+
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Services Section · Index */
+.services-section__items-container {
+  justify-content: space-evenly;
+}
+.services-section__items-container ul {
+  list-style-image: url("/assets/Bullet Points.svg");
+  list-style-position: inside;
+}
+.services-section__items-container ul .bold-text {
+  font-weight: 700;
+  color: #6BA7C9;
+}
+@media screen and (max-width: 960px) {
+  .services-section__items-container {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .services-section__items-container img {
+    width: 60%;
+  }
+}
+
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Sección de datos/about Index */
+.about-section {
+  background-color: #C6E8F9;
+  height: 25rem;
+}
+.about-section .data {
+  display: flex;
+  align-items: center;
+  justify-content: initial;
+  flex-direction: column;
+}
+.about-section .data__number {
+  font-weight: 700;
+  font-size: 40px;
+  color: #6BA7C9;
+}
+.about-section .data__concept {
+  font-weight: 400;
+  font-size: 20px;
+  color: #6BA7C9;
+}
+@media screen and (max-width: 960px) {
+  .about-section .about-section__items-container {
+    flex-direction: column;
+  }
+  .about-section .about-section__items-container .data:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Projects/Work Section */
+.work-section .social-container {
+  width: fit-content;
+  margin: 1rem auto;
+}
+.work-section .social-container .social__profile:not(:first-of-type) {
+  margin-left: 2rem;
+}
+.work-section .social-container .social__profile .profile__hyperlink {
+  font-weight: 600;
+  font-size: 12px;
+  color: #6BA7C9;
+}
+.work-section .social-container .social__profile .profile__hyperlink i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+.work-section .projects-container {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 2rem;
+  margin: 1rem auto;
+}
+.work-section .projects-container .project {
+  width: 9rem;
+  margin: auto;
+}
+.work-section .projects-container .project__preview-image {
+  width: 9rem;
+}
+.work-section .projects-container .project__name {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #6BA7C9;
+  cursor: pointer;
+}
+.work-section .projects-container .project__provided-services {
+  margin: 0;
+  font-size: 13px;
+}
+@media screen and (max-width: 960px) {
+  .work-section .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+  }
+}
+
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Testimonial Section · Carousel */
+.testimonial-section h3 {
+  margin: 2rem auto;
+}
+.testimonial-section .carousel .carousel-inner .carousel-item .testimonial-card__container .testimonial-card {
+  width: 30rem;
+  height: 20rem;
+  background-color: #EDEDED;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+.testimonial-section .carousel .carousel-inner .carousel-item .testimonial-card__container .testimonial-card .client-data img {
+  width: 50px;
+  border-radius: 50%;
+}
+.testimonial-section .carousel .carousel-inner .carousel-item .testimonial-card__container .testimonial-card .client-data span {
+  margin-left: 1rem;
+  position: absolute;
+}
+.testimonial-section .carousel .carousel-inner .carousel-item .testimonial-card__container .testimonial-card .client-data span:not(:first-of-type) {
+  color: rgba(0, 0, 0, 0.3019607843);
+  margin-top: 1.5rem;
+}
+.testimonial-section .carousel .carousel-inner .carousel-item .testimonial-card__container .testimonial-card .quote p {
+  width: 80%;
+  margin: 2rem;
+}
+.testimonial-section .carousel .carousel-inner .carousel-item .testimonial-card__container .testimonial-card .quote-decoration {
+  position: relative;
+  top: 10%;
+  left: 46%;
+}
+.testimonial-section .carousel .carousel-indicators {
+  background-color: re;
+  position: initial;
+  width: 100%;
+  margin: 2rem auto 5rem;
+  display: flex;
+  justify-content: center;
+}
+.testimonial-section .carousel .carousel-indicators button {
+  height: 1rem;
+  width: 1rem;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(107, 166, 201, 0.6078431373);
+}
+.testimonial-section .carousel .carousel-indicators button:not(:first-child) {
+  margin-left: 2rem;
+}
+.testimonial-section .carousel .carousel-indicators button.active {
+  background-color: rgba(5, 60, 92, 0.6078431373);
+}
+@media screen and (max-width: 960px) {
+  .testimonial-section .carousel .carousel-inner .carousel-item .testimonial-card__container .testimonial-card {
+    width: 20rem;
+    height: auto;
+  }
+}
+
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Sección de contacto (Contact Section) */
+.form__container {
+  width: 80%;
+  margin: auto;
+}
+.form__container form fieldset {
+  border: 0;
+}
+.form__container form fieldset:first-of-type {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.form__container form fieldset .field {
+  margin: 2rem 0;
+}
+.form__container form fieldset .field input {
+  width: 80%;
+  font-size: 12px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #EDEDED;
+  padding: 0.2rem 0;
+  display: block;
+}
+.form__container form fieldset label {
+  font-size: 16px;
+  font-weight: 700;
+}
+.form__container form fieldset label .required {
+  color: #cf3950;
+}
+.form__container form fieldset #message {
+  min-width: 100%;
+  min-height: 200px;
+  padding: 2rem;
+  background-color: #EDEDED;
+  border-radius: 0 3rem 3rem 3rem;
+  font-size: 14px;
+  outline: none;
+  border: none;
+}
+.form__container form fieldset #message::placeholder {
+  position: absolute;
+}
+@media screen and (max-width: 960px) {
+  .form__container {
+    width: 80%;
+  }
+  .form__container form fieldset {
+    border: 0;
+  }
+  .form__container form fieldset:first-of-type {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+  }
+  .form__container form fieldset .field {
+    margin: 2rem 0;
+  }
+  .form__container form fieldset .field input {
+    width: 75vw;
+  }
+}
+
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Footer */
+footer {
+  padding: 2rem 0;
+  background-color: #C6E8F9;
+}
+footer .footer-container {
+  width: 90%;
+}
+footer .logo {
+  font-weight: 700;
+  color: #6BA7C9;
+  cursor: pointer;
+}
+footer .logo:hover {
+  text-decoration: none;
+}
+footer .footer-social-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+footer .footer-social-container a {
+  color: #6BA7C9;
+}
+footer .footer-social-container a i {
+  font-size: 1.5rem;
+}
+footer .footer-social-container a:not(:first-child) {
+  margin-left: 0.5rem;
+}
+footer .category-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #6BA7C9;
+  text-decoration: underline;
+}
+footer .category ul {
+  list-style: none;
+}
+footer .category ul li {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+footer .category ul li a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+}
+footer .category .contact {
+  font-weight: 600;
+  color: #6BA7C9;
+}
+footer .category .arrow {
+  width: 25px;
+  position: absolute;
+  margin-left: 1rem;
+}
+@media screen and (max-width: 960px) {
+  footer .footer-container {
+    flex-direction: column;
+  }
+  footer .footer-container .footer-social-container {
+    width: 25%;
+  }
+  footer .footer-container div:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Secciones de otras páginas */
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Página de serviocios */
+.cards-container {
+  width: fit-content;
+  margin: 2rem auto 0;
+}
+.cards-container .service-card {
+  width: 80%;
+  padding: 5%;
+  margin: auto;
+  margin-bottom: 4rem;
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.11);
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: initial;
+}
+.cards-container .service-card .left-container, .cards-container .service-card .right-container {
+  max-width: 50%;
+}
+.cards-container .service-card .left-container .service-name {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 20px;
+  color: #6BA7C9;
+}
+.cards-container .service-card .left-container .tecnologies-container img {
+  width: 2.2vw;
+}
+.cards-container .service-card .right-container {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 960px) {
+  .cards-container .service-card {
+    flex-direction: column;
+  }
+  .cards-container .service-card .left-container, .cards-container .service-card .right-container {
+    max-width: 80%;
+  }
+  .cards-container .service-card .left-container {
+    font-size: 13px;
+    text-align: center;
+  }
+  .cards-container .service-card .left-container .tecnologies-container {
+    margin: 2rem auto;
+  }
+  .cards-container .service-card .left-container .tecnologies-container img {
+    width: 4vw;
+  }
+}
+
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Projects - Gallery */
+.gallery-container {
+  width: 60%;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 0.5fr);
+  grid-gap: 1rem;
+}
+.gallery-container .project-preview {
+  background-color: #EDEDED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+}
+.gallery-container .first-project {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.gallery-container .first-project img {
+  transform: rotate(90deg);
+}
+.gallery-container .second-project {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 3;
+}
+.gallery-container .third-project {
+  grid-row-start: 2;
+  grid-column-start: 1;
+}
+.gallery-container .fourth-project {
+  grid-row-start: 2;
+  grid-column-start: 2;
+}
+@media screen and (max-width: 960px) {
+  .gallery-container .project-preview {
+    padding: 0.5rem;
+  }
+  .gallery-container .project-preview img {
+    width: 60%;
+  }
+  .gallery-container .first-project img {
+    width: 30%;
+  }
+}
+
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Statement Section · About Page */
+.statements__container {
+  width: fit-content;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: initial;
+}
+.statements__container div {
+  width: 22%;
+}
+.statements__container .statement {
+  display: flex;
+  align-items: center;
+  justify-content: initial;
+  flex-direction: column;
+}
+.statements__container .statement i {
+  font-size: 1.5rem;
+  color: #6BA7C9;
+}
+.statements__container .statement p {
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Mixin para flexbox. Llamando a las variables $align y $justify como argumentos, se podrá cambiar su valor */ /* Info About · About Page */
+.info__container {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.info__container .info__category:not(:first-child) {
+  margin-left: 2rem;
+}
+.info__container .info__category:not(:last-child) {
+  border-right: 2px solid #EDEDED;
+  padding-right: 2.5rem;
+}
+.info__container .info__category .category-name.info {
+  font-size: 16px;
+  font-weight: 700;
+  color: #6BA7C9;
+  cursor: pointer;
+}
+.info__container .info__category .link-info {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+}
+.info__container .info__category .link-info::after {
+  margin-left: 2rem;
+  content: "→";
+}
+.info__container .info__category .link-info:hover {
+  transition: 0.2s;
+  color: rgba(5, 60, 92, 0.6078431373);
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=style.css.map */

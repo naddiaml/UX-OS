@@ -1,0 +1,68 @@
+/* Página de serviocios */
+@use '../base/_mixinsfunc.scss';
+@import '../base/_variables.scss';
+
+.cards-container {
+    width: fit-content;
+    margin: 2rem auto 0;
+
+    .service-card {
+        width: 80%;
+        padding: 5%;
+        margin: auto;
+        margin-bottom: 4rem;
+        box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.11);
+        border-radius: 40px;
+        @include mixinsfunc.flexbox(center, space-around, initial);
+
+        & .left-container,
+        & .right-container {
+            max-width: 50%;
+        }
+
+        & .left-container {
+
+            .service-name {
+                font-family: 'Poppins';
+                font-weight: 500;
+                font-size: 20px;
+                color: $primary-color;
+            }
+
+            .tecnologies-container {
+                img {
+                    width: 2.2vw;
+                }
+            }
+        }
+
+        & .right-container {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        @include breakpoint {
+            flex-direction: column;
+
+            & .left-container,
+            & .right-container {
+                max-width: 80%;
+            }
+
+            & .left-container {
+                font-size: 13px;
+                text-align: center;
+
+                .tecnologies-container {
+                    margin: 2rem auto;
+
+                    img {
+                        width: 4vw;
+                    }
+                }
+            }
+        }
+    }
+
+}

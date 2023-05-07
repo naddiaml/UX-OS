@@ -1,0 +1,91 @@
+/* Sección de contacto (Contact Section) */
+@use '../base/_mixinsfunc.scss';
+@import '../base/_variables.scss';
+
+.form__container {
+    width: 80%;
+    margin: auto;
+
+    form {
+
+        fieldset {
+            border: 0;
+
+            &:first-of-type {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .field {
+                margin: 2rem 0;
+
+                input {
+                    width: 80%;
+                    font-size: 12px;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid $gray;
+                    padding: .2rem 0;
+                    display: block;
+                }
+
+            }
+
+            label {
+                font-size: 16px;
+                font-weight: 700;
+
+                & .required {
+                    color: $required;
+                }
+
+            }
+
+            #message {
+                min-width: 100%;
+                min-height: 200px;
+                padding: 2rem;
+                background-color: $gray;
+                border-radius: 0 3rem 3rem 3rem;
+                font-size: 14px;
+                outline: none;
+                border: none;
+
+                &::placeholder {
+                    position: absolute;
+                }
+            }
+
+        }
+
+    }
+
+    @include breakpoint {
+        width: 80%;
+
+        form {
+
+            fieldset {
+                border: 0;
+
+                &:first-of-type {
+                    display: flex;
+                    align-items: start;
+                    flex-direction: column;
+                }
+
+                .field {
+                    margin: 2rem 0;
+
+                    input {
+                        width: 75vw;
+                    }
+
+                }
+            }
+
+        }
+
+    }
+
+}
