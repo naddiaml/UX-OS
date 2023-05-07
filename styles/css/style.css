@@ -289,7 +289,7 @@ header .button {
   justify-content: space-evenly;
 }
 .services-section__items-container ul {
-  list-style-image: url("/assets/Bullet Points.svg");
+  list-style-image: url("../../../assets/Bullet-Points.svg");
   list-style-position: inside;
 }
 .services-section__items-container ul .bold-text {
